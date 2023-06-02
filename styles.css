@@ -1,0 +1,23 @@
+div{
+    border-width:1px;
+    border-color:red;
+}
+
+}
+body{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+button{
+    flex:1;
+
+}
+.calc{
+    display:flex;
+    flex-direction:column;
+}
+.lower_row{
+    display:flex;
+    flex-direction:row;
+}
