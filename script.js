@@ -1,32 +1,21 @@
-let x, y;
+let display = document.getElementById('display');
+let buttons = Array.from(document.getElementsByClassName('button'));
+console.log(buttons);
 
-
-function add(x, y){
-    return x+y;
-}
-function subtract(x, y){
-    return x-y;
-}
-function multiply(x, y){
-    return x*y;
-}
-function divide(x, y){
-    return x/y;
-}
-
-function operate(s,x,y){
-    if(s == "+"){
-        return add(x,y);
-    }
-    else if (s == "-"){
-        return subtract(x,y);
-    }
-    else if (s == "*"){
-        return multiply(x,y);
-    }
-    else if (s == "/"){
-        return divide(x,y);
-    }
-    return "error";
-}
-
+buttons.map(button => {
+    button.addEventListener('click', (e) =>{
+        console.log(e.target.innerText);
+        switch(e.target.innerText){
+            case 'C':
+                display.innerText = "";
+                break;
+            case '←':
+                if(display.innerText){
+                    display.innerText = display.innerText.slice(0, -1);
+                }
+                break;
+            default:
+                display.innerText +=e.target.innerText;
+        }
+    });
+});
